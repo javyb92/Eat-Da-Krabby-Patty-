@@ -1,13 +1,32 @@
-var connection = require("./connection.js");
+var connection = require("../config/connection.js");
 
-// The ?? signs are for swapping out table or column names
-// The ? signs are for swapping out other values
-// These help avoid SQL injection
-// https://en.wikipedia.org/wiki/SQL_injection
+// function printQuestionMarks(num) {
+//   var arr = [];
+
+//   for (var i = 0; i < num; i++) {
+//     arr.push("?");
+//   }
+
+//   return arr.toString();
+// }
+function objToSql(ob) {
+  var arr = [];
+  for (var key in ob) {
+    var value = ob[key];
+    if (Object.hasOwnProperty.call(ob, key)) {
+      if (typeof value === "string" && value.indexOf(" ") >= 0) {
+        value = "'" + value + "'";
+      }
+      arr.push(key + "=" + value);
+    }
+  }
+  return arr.toString();
+}
+
+// Object for all our SQL statement functions.
 var orm = {
-
-selectAll: function(tableInput, cb) {
-    var queryString = "SELECT * FROM " + "burgers" + ";";
+  selectAll: function(tableInput, cb) {
+    var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
@@ -15,8 +34,7 @@ selectAll: function(tableInput, cb) {
       cb(result);
     });
   },
-
-insertOne: function(table, cols, vals, cb) {
+  insertOne: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
     queryString += " (";
@@ -36,8 +54,8 @@ insertOne: function(table, cols, vals, cb) {
       cb(result);
     });
   },
-
-updateOne: function(table, objColVals, condition, cb) {
+  // An example of objColVals would be {name: panther, sleepy: true}
+  updateOne: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
@@ -53,8 +71,21 @@ updateOne: function(table, objColVals, condition, cb) {
 
       cb(result);
     });
-  }
+  },
+  deleteOne: function(table, condition, cb) {
+    var queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
+    queryString += condition;
 
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  }
 };
 
+// Export the orm object for the model (cat.js).
 module.exports = orm;

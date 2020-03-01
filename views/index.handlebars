@@ -2,15 +2,16 @@
 
 {{!-- <img src="../public/assets/img/kp.png" alt="krabby patty"> --}}
 
+<h2>Burgers to Eat!</h2>
 <ul>
   {{#each burger}}
     {{#unless devoured}}
-      {{> burger/burger-block burgerDevoured=true}}
+      {{> burgers/burger-block burgerDevoured=true}}
     {{/unless}}
   {{/each}}
 </ul>
 
-
+<h2>Burgers Eaten!</h2>
 <ul>
   {{#each burger}}
     {{#if devoured}}
@@ -22,10 +23,6 @@
 
 <h2>Add a Krabby Patty!</h2>
 
-  <div class="form-group">
-    <label for="burgerAdd">Cat Name:</label>
-    <input type="text" id="burgerAdd" name="name">
-  </div>
 
 <form class="create-form">
   <div class="form-group">

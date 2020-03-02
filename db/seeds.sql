@@ -1,4 +1,4 @@
-INSERT INTO burger (name, devoured)
-VALUES ("Krabby Patty", FALSE),
-       ("Pretty Patty", FALSE),
-       ("Krabby Double Deluxe", FALSE);
+INSERT INTO burger (name)
+VALUES ('Krabby Patty'),
+       ('Pretty Patty'),
+       ('Krabby Double Deluxe');

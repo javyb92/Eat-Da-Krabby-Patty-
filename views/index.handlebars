@@ -1,12 +1,10 @@
 <h1>KRABBY PATTIES!</h1>
 
-{{!-- <img src="../public/assets/img/kp.png" alt="krabby patty"> --}}
-
 <h2>Burgers to Eat!</h2>
 <ul>
   {{#each burger}}
     {{#unless devoured}}
-      {{> burgers/burger-block burgerDevoured=true}}
+      {{> burger/burger-block devour=true}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -15,7 +13,7 @@
 <ul>
   {{#each burger}}
     {{#if devoured}}
-      {{> burger/burger-block burgerDevoured=false}}
+      {{> burger/burger-block devour=false}}
     {{/if}}
   {{/each}}
 </ul>

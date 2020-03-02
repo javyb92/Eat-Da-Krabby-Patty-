@@ -45,7 +45,7 @@ router.get("/", function(req, res) {
     });
   });
 
-  router.delete("/api/burger/:id", function(req, res) {
+  router.delete("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
     burgers.deleteOne(condition, function(result) {

@@ -1,5 +1,7 @@
 # Eat-Da-Krabby-Patty
 
+![The Krusty Krab (4)](https://user-images.githubusercontent.com/59591116/75743026-367a5e00-5cd5-11ea-83c5-17935002bd9d.gif)
+
 <h2>Description</h2>
 The Krusty Krab Eat Da Patty App lets you "devour" all the Krusty Krabs availble Krabby Patties! You can also create your own Krabby Patty to devour! A delete button is used to discard the Krabby Patties you ate which is also displayed!
 

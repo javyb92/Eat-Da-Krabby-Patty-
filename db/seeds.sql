@@ -9,7 +9,7 @@ VALUES ('Krabby Patty'),
        ('Krusty Krab Pizza'),
        ('Pipsqueak Patty'),
        ('Monster Krabby Patty'),
-       ('Crustless Krabby Patty')
+       ('Crustless Krabby Patty'),
        ('Flabby Patty'),
        ('Chopper Patty'),
        ('Relish Patty'),

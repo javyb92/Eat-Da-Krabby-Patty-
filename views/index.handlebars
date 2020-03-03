@@ -1,32 +1,42 @@
-<h1>KRABBY PATTIES!</h1>
+<main class="container-fluid">
 
-<h2>Burgers to Eat!</h2>
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devour=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+  <header>
+    <img src="https://i.imgur.com/wfaJ5M8.jpg" class="img-container" alt="Krabby Patty">
+    <h1>THE KRUSTY KRAB</h1>
+  </header>
 
-<h2>Burgers Eaten!</h2>
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/devouredburger-block devour=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+  <article class="row">
 
+    <section class="col-lg-3" id="kpSections"><h2>Add Your Very Own Krabby Patty!</h2>
+        <form class="create-form">
+          <div class="form-group">
+            <label for="burgerAdd"></label> 
+            <input type="text" id="burgerAdd" name="name" placeholder="Insert Name Here!"> Patty
+          </div>
+            <button type="submit">Add Krabby Patty!</button>
+        </form>
+    </section>
 
-<h2>Add a Krabby Patty!</h2>
+    <section class="col-lg-3" id="kpSections"><h2>All Of The Krabby Patties You Can Eat!</h2>
+      <ul id= "Ordered">
+        {{#each burgers}}
+          {{#unless devoured}}
+            {{> burgers/burger-block devour=true}}
+          {{/unless}}
+        {{/each}}
+        </ul>
+    </section>
 
+    <section class="col-lg-3" id="kpSections"><h2>Krabby Patties You've Eaten!</h2>
+      <ul id= "Eaten">
+        {{#each burgers}}
+         {{#if devoured}}
+            {{> burgers/devouredburger-block devour=false}}
+         {{/if}}
+        {{/each}}
+      </ul>
+    </section>
 
-<form class="create-form">
-  <div class="form-group">
-    <label for="burgerAdd">Krabby Patty:</label>
-    <input type="text" id="burgerAdd" name="name">
-  </div>
+  </article>
 
-  <button type="submit">Add Burger</button>
-</form>
+</main>

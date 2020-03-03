@@ -14,7 +14,6 @@ $(function() {
         data: burgerStatus
       }).then(
         function() {
-          console.log(burgerDevoured);
           // Reload the page to get the updated list
           location.reload();
         }
@@ -27,7 +26,6 @@ $(function() {
     
         var newBurger = {
           name: $("#burgerAdd").val().trim(),
-
         };
     
         // Send the POST request.
@@ -36,7 +34,6 @@ $(function() {
           data: newBurger
         }).then(
           function() {
-            console.log("created new cat");
             // Reload the page to get the updated list
             location.reload();
           }
@@ -51,7 +48,6 @@ $(function() {
           type: "DELETE"
         }).then(
           function() {
-            console.log("deleted cat", id);
             // Reload the page to get the updated list
             location.reload();
           }

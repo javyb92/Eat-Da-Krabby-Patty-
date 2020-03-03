@@ -20,7 +20,7 @@ router.get("/", function(req, res) {
     burger.insertOne([
       "name", "devoured"
     ], [
-      req.body.name, 0
+      req.body.name + " Patty", 0
     ], function(result) {
       // Send back the ID of the new quote
       res.json({ id: result.insertId });

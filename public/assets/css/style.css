@@ -1,0 +1,46 @@
+
+body{
+
+    font-size: 15px;
+    font-family: "Slackey";
+    background-color: #4BC6E8;
+    color: whitesmoke;
+
+}
+
+header{
+    text-align: center;
+}
+
+.img-container{
+    border: 2px solid #FFC61F;
+    
+}
+
+h1{
+
+    color: #991B1F;
+    font-size: 75px;
+
+}
+
+h2{
+    color: whitesmoke;
+}
+
+article{
+    justify-content: space-around;
+
+}
+
+#kpSections{
+    display: block;
+    background-color: #1C6FB5;
+    border: 2px solid #FFC61F;
+
+}
+
+button{
+    color: #991B1F;
+
+}

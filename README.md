@@ -19,3 +19,4 @@ The Krusty Krab Eat Da Patty App lets you "devour" all the Krusty Krabs availble
 <li>Learn how to use staic elements better when using handlebars and database stuff.</li>
 
 <h2>Project Link</h2>
+https://cryptic-savannah-77407.herokuapp.com/
